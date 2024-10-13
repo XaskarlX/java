@@ -12,7 +12,10 @@ public class Zoo {
     public Zoo(String city, String name, int nbrCages , Animal[] animals) {
         this.animals = new Animal[nbrCages];
         this.city = city;
-        this.name = name;
+        if(name == null || name.isEmpty()) {
+            System.out.println("Name can't be null");
+            this.name = "default";
+        }
         if(nbrCages > maxCages){
             this.nbrCages = maxCages;
         }else {
@@ -37,11 +40,11 @@ public class Zoo {
                 return false;
             }
         }
-        if (currentCount < nbrCages) {
+        if (this.isZooFull()) {
+            return false;
+        } else {
             animals[currentCount] = animal;
             return true;
-        } else {
-            return false;
         }
     }
 

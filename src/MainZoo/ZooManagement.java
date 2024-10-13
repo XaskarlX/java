@@ -27,6 +27,9 @@ public class ZooManagement {
 
         myZoo.addAnimal(eagle);
 
+
+
+
         System.out.println("Zoo full? :"+ myZoo.isZooFull());
 
 
