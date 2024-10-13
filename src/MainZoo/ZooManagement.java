@@ -1,15 +1,18 @@
 package MainZoo;
 
 import Classes.Animal;
+import Classes.Terrestre;
+import Classes.Aquatic;
 import Classes.Zoo;
 
 public class ZooManagement {
     public static void main(String[] args){
-        Animal lion = new Animal("mammal","lion",6,true);
-        Animal elephant = new Animal("mammal", "elephant", 12, true);
-        Animal eagle = new Animal("bird", "eagle", 4, false);
-        Animal crocodile = new Animal("reptile", "crocodile", 8, false);
-        Animal crocodile1 = new Animal("reptile", "crocodile1", 8, false);
+        Terrestre lion = new Terrestre("mammal","Lion",6,true,4);
+        Terrestre elephant = new Terrestre("mammal", "Elephant", 12, true,4);
+        Animal eagle = new Animal("bird", "Eagle", 4, false);
+        Aquatic dolphin = new Aquatic("reptile", "Dolphin", 8, false,"sea");
+        Aquatic penguin = new Aquatic("reptile", "Penguin", 8, false,"snow");
+
 
 
 
@@ -18,14 +21,14 @@ public class ZooManagement {
 
         myZoo.addAnimal(elephant);
         myZoo.addAnimal(eagle);
-        myZoo.addAnimal(crocodile);
+        myZoo.addAnimal(dolphin);
         myZoo.addAnimal(lion);
 
         myZoo.removeAnimal(eagle);
 
         System.out.println(myZoo.searchAnimal(elephant));
 
-        myZoo.addAnimal(eagle);
+        myZoo.addAnimal(penguin);
 
 
 
@@ -38,10 +41,15 @@ public class ZooManagement {
 
 
         myZoo1.addAnimal(eagle);
-        myZoo1.addAnimal(crocodile);
-        myZoo1.addAnimal(lion);
+        myZoo1.addAnimal(penguin);
 
-        System.out.println( "\nthe comparer result : " +myZoo.comparerZoo(myZoo1).getName());
+        dolphin.swim();
+        penguin.swim();
+
+
+
+
+
 
 
 
