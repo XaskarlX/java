@@ -12,9 +12,10 @@ public class Aquatic extends Animal {
 
     }
 
+
     public void swim(){
 
-        System.out.println("\nthis Aquatic animal is swimming");
+       // System.out.println("\nthis Aquatic animal is swimming");
 
         if (this.getName() == "Dolphin") {
             System.out.println("\nthis Dolphin is swimming");
@@ -29,4 +30,15 @@ public class Aquatic extends Animal {
         return "Aquatic " + super.toString() + "\nHabitat: " + habitat;
     }
 
+    public String getHabitat() {
+        return habitat;
+    }
+
+
+    public boolean equal(Aquatic a) {
+        if (this.getName().equals(a.getName()) && this.getAge() == a.getAge() && this.getHabitat().equals(a.getHabitat())) {
+            return true;
+        }
+        return false;
+    }
 }

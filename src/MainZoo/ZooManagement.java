@@ -13,38 +13,36 @@ public class ZooManagement {
         Aquatic dolphin = new Aquatic("reptile", "Dolphin", 8, false,"sea");
         Aquatic penguin = new Aquatic("reptile", "Penguin", 8, false,"snow");
 
-
-
-
         Zoo myZoo = new Zoo("h-lif","myZoo",4 ,null);
         Zoo myZoo1 = new Zoo("h-lif1","myZoo1",4 ,null);
 
         myZoo.addAnimal(elephant);
-        myZoo.addAnimal(eagle);
         myZoo.addAnimal(dolphin);
         myZoo.addAnimal(lion);
-
-        myZoo.removeAnimal(eagle);
-
-        System.out.println(myZoo.searchAnimal(elephant));
-
         myZoo.addAnimal(penguin);
-
-
-
-
-        System.out.println("Zoo full? :"+ myZoo.isZooFull());
-
-
-        System.out.println(myZoo.displayZoo());
-        System.out.println(myZoo.displayAnimals());
-
 
         myZoo1.addAnimal(eagle);
         myZoo1.addAnimal(penguin);
+        myZoo1.addAnimal(dolphin);
 
-        dolphin.swim();
-        penguin.swim();
+        //_________________________________________
+
+        myZoo1.addAquaticAnimal(dolphin);
+
+        System.out.println(myZoo1.displayZoo());
+        System.out.println(myZoo1.displayAnimals());
+
+        myZoo1.AquaticsSwim();
+
+        System.out.println(myZoo1.maxPenguinSwimmingDepth());
+
+        myZoo1.displayNumberOfAquaticsByType();
+
+        System.out.println(dolphin.equal(penguin));
+
+
+
+
 
 
 
