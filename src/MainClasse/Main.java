@@ -1,40 +1,32 @@
 package MainClasse;
 import Classes.*;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        DepartementHashSet gestionDepartements = new DepartementHashSet();
+        StudentManagement studentManagement = new StudentManagement();
+        List<Etudiant> students = Arrays.asList(
+                new Etudiant(1, "lowel", 20),
+                new Etudiant(2, "theni", 26),
+                new Etudiant(3, "le5er", 19)
+        );
 
-        Departement d1 = new Departement(1, "dep1", 10);
-        Departement d2 = new Departement(2, "dep2", 25);
-        Departement d3 = new Departement(3, "dep3", 15);
 
-        gestionDepartements.ajouterDepartement(d1);
+        System.out.println("Etudiants :");
+        studentManagement.displayStudents(students, System.out::println);
 
-        gestionDepartements.ajouterDepartement(d2);
-        gestionDepartements.ajouterDepartement(d3);
+        System.out.println("\n age > 20 :");
+        studentManagement.displayStudentsByFilter(students, s -> s.getAge() > 20, System.out::println);
 
-        System.out.println("les Department : ");
-        gestionDepartements.displayDepartement();
+        System.out.println("\nles noms :");
+        String names = studentManagement.returnStudentsNames(students, Etudiant::getnometu);
+        System.out.println(names);
 
-        //----------------------
+        Etudiant newStudent = studentManagement.createStudent(() -> new Etudiant(4, "David", 21));
+        System.out.println("\nNew Student Created: " + newStudent);
 
-        Employe e1 = new Employe(1, "lowel");
-        Employe e2 = new Employe(2, "thnen");
-        Employe e3 = new Employe(3, "theth");
-
-        AffectationHashMap gestionAffectation = new AffectationHashMap();
-        gestionAffectation.ajouterEmployeDepartement(e1, d1);
-
-        gestionAffectation.ajouterEmployeDepartement(e2, d2);
-        gestionAffectation.ajouterEmployeDepartement(e3, d1);
-
-        gestionAffectation.afficherEmployesEtDepartements();
-        gestionAffectation.afficherDepartements();
-
-        System.out.println(gestionAffectation.rechercherEmploye(e1));
-
-        System.out.println(gestionAffectation.rechercherDepartement(d2));
+        System.out.println("\nStream etudiants:");
+        studentManagement.convertToStream(students).forEach(System.out::println);
     }
 }
 
