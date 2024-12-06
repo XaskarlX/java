@@ -17,18 +17,24 @@ public class Main {
         System.out.println("les Department : ");
         gestionDepartements.displayDepartement();
 
-        System.out.println(gestionDepartements.rechercherDepartement("dep1"));
+        //----------------------
 
-        System.out.println("\ndelete dep1 ...");
-        gestionDepartements.supprimerDepartement(d2);
+        Employe e1 = new Employe(1, "lowel");
+        Employe e2 = new Employe(2, "thnen");
+        Employe e3 = new Employe(3, "theth");
 
-        System.out.println("re display  les deps :");
-        gestionDepartements.displayDepartement();
+        AffectationHashMap gestionAffectation = new AffectationHashMap();
+        gestionAffectation.ajouterEmployeDepartement(e1, d1);
 
-        System.out.println("tri ... :");
-        for (Departement d : gestionDepartements.trierDepartementById()) {
-            System.out.println(d);
-        }
+        gestionAffectation.ajouterEmployeDepartement(e2, d2);
+        gestionAffectation.ajouterEmployeDepartement(e3, d1);
+
+        gestionAffectation.afficherEmployesEtDepartements();
+        gestionAffectation.afficherDepartements();
+
+        System.out.println(gestionAffectation.rechercherEmploye(e1));
+
+        System.out.println(gestionAffectation.rechercherDepartement(d2));
     }
 }
 
