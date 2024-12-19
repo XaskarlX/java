@@ -1,6 +1,7 @@
 package Classes;
 
-public class Aquatic extends Animal {
+
+public class Aquatic extends Animal implements AnimInterface.Carnivore<AnimInterface.Food>{
     private String habitat;
 
     public Aquatic() {
@@ -12,6 +13,14 @@ public class Aquatic extends Animal {
 
     }
 
+    @Override
+    public void eatMeat(AnimInterface.Food meat) {
+        if (meat == AnimInterface.Food.MEAT) {
+            System.out.println(getName());
+        } else {
+            System.out.println(getName());
+        }
+    }
 
     public void swim(){
 

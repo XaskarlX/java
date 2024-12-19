@@ -3,38 +3,26 @@ package MainZoo;
 import Classes.Animal;
 import Classes.Terrestre;
 import Classes.Aquatic;
-import Classes.Zoo;
-import Classes.ZooException;
+import Classes.AnimInterface;
 
 public class ZooManagement {
     public static void main(String[] args) {
-        Terrestre lion = new Terrestre("mammal", "Lion", 6, true, 4);
-        Terrestre elephant = new Terrestre("mammal", "Elephant", 12, true, 4);
-        Animal eagle = new Animal("bird", "Eagle", 4, false);
-        Aquatic dolphin = new Aquatic("reptile", "Dolphin", 8, false, "sea");
-        Aquatic penguin = new Aquatic("reptile", "Penguin", 8, false, "snow");
+        // Create animals
+        Aquatic dolphin = new Aquatic("Mammal", "Dolphin", 8, true, "Sea");
+        Terrestre lion = new Terrestre("Mammal", "Lion", 6, true, 4);
+        Terrestre bear = new Terrestre("Mammal", "Bear", 10, true, 4);
 
-        Zoo myZoo = new Zoo("h-lif", "myZoo", 3, null);
 
-        try {
-            myZoo.addAnimal(elephant);
-            System.out.println(elephant.getName());
-            System.out.println(myZoo.countAnimals());
+        dolphin.eatMeat(AnimInterface.Food.MEAT);
+        dolphin.eatMeat(AnimInterface.Food.PLANT);
 
-            myZoo.addAnimal(dolphin);
-            System.out.println(dolphin.getName());
-            System.out.println(myZoo.countAnimals());
 
-            myZoo.addAnimal(lion);
-            System.out.println(lion.getName());
-            System.out.println(myZoo.countAnimals());
+        lion.eatMeat(AnimInterface.Food.MEAT);
+        lion.eatPlant(AnimInterface.Food.PLANT);
+        lion.eatPlantAndMeat(AnimInterface.Food.BOTH);
 
-            myZoo.addAnimal(penguin);
-            System.out.println(penguin.getName());
-            System.out.println(myZoo.countAnimals());
 
-        } catch (ZooException e) {
-            System.out.println(e.getMessage());
-        }
+        bear.eatMeat(AnimInterface.Food.MEAT);
+        bear.eatPlant(AnimInterface.Food.PLANT);
     }
 }
