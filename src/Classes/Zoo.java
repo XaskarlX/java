@@ -34,19 +34,19 @@ public class Zoo {
         return count;
     }
 
-    public boolean addAnimal(Animal animal) {
+    public void addAnimal(Animal animal) throws ZooException {
         int currentCount = countAnimals();
         for(Animal anima : animals){
             if(anima == animal) {
-                return false;
+                return; // Animal already exists, do nothing
             }
         }
-        if (this.isZooFull()) {
-            return false;
+        if (currentCount >= nbrCages) {
+            throw new ZooException("The zoo is full! Cannot add more animals.");
         } else {
             animals[currentCount] = animal;
-            return true;
         }
+        System.out.println("Animal added successfully. Total animals: " + countAnimals());
     }
 
     public void addAquaticAnimal(Aquatic aquatic) {
