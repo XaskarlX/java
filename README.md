@@ -1,7 +1,7 @@
-prosit 6 :
+Prosit 6 :
 
-Key Features added in this prosit :
-- Adding and managing aquatic animals within a zoo.
-- Displaying aquatic animal behavior through a swim() method.
-- Managing and retrieving specific information like penguin swimming depth and aquatic animal types.
-- Implementing an equals() method to compare aquatic animals based on specific attributes.
+Principales fonctionnalités ajoutées dans ce prosit :
+-Ajout et gestion des animaux aquatiques dans un zoo.
+-Affichage du comportement des animaux aquatiques à travers une méthode nager().
+-Gestion et récupération d'informations spécifiques, telles que la profondeur de nage des pingouins et les types d'animaux aquatiques.
+-Implémentation d'une méthode equals() pour comparer les animaux aquatiques en fonction d'attributs spécifiques.
